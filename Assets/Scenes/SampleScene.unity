@@ -1448,6 +1448,8 @@ GameObject:
   - component: {fileID: 1442848147}
   - component: {fileID: 1442848146}
   - component: {fileID: 1442848150}
+  - component: {fileID: 1442848152}
+  - component: {fileID: 1442848151}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -1580,6 +1582,40 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ee05dc488b8660845a19d06a3b043941, type: 3}
   - {fileID: 8300000, guid: 7ee773160b8ce9841880999366777d2c, type: 3}
   actIndex: 0
+  anim: {fileID: 1442848152}
+--- !u!114 &1442848151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442848145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9859aadeed7fb0345a6319ee65971ccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  roulette: {fileID: 1771820066}
+--- !u!95 &1442848152
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442848145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b160f88185402241a9c47f3df5f1e32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1477069797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,6 +2296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1771820067}
   - component: {fileID: 1771820068}
+  - component: {fileID: 1771820069}
   m_Layer: 5
   m_Name: Roulette
   m_TagString: Untagged
@@ -2298,17 +2335,31 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771820066}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7b160f88185402241a9c47f3df5f1e32, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1771820069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771820066}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9859aadeed7fb0345a6319ee65971ccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  roulette: {fileID: 1771820066}
 --- !u!1 &1774369959
 GameObject:
   m_ObjectHideFlags: 0

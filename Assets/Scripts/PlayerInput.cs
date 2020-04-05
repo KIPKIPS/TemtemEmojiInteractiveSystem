@@ -24,18 +24,23 @@ public class PlayerInput : MonoBehaviour {
     public AudioSource[] audios;
     public AudioClip[] clips;
     public int actIndex;
+
+    public Animator anim;
     //public int last=-1;
     // Start is called before the first frame update
     void Start() {
+        roulette.SetActive(false);
         width = Screen.width;
         height = Screen.height;
         oriColor = outside[0].color;
         audios = Camera.main.GetComponents<AudioSource>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetMouseButtonDown(0)&&audios[0].isPlaying==false) {
+        Debug.Log(outside[actIndex].color.a);
+        if (Input.GetMouseButtonDown(0)) {
             audios[0].clip=clips[4];
             audios[0].Play();
         }
@@ -68,14 +73,17 @@ public class PlayerInput : MonoBehaviour {
             }
             actInside.SetActive(false);
             inactInside.SetActive(true);
-            roulette.SetActive(false);
             actOutside.color = oriColor;
             actEmoji.SetActive(false);
             MouseUpEvent(actIndex);
+            Invoke("Close",0.2f);
             //TODO:设置动画表情
         }
     }
 
+    void Close() {
+        anim.SetBool("close", true);
+    }
     void MouseUpEvent(int index) {
         if (audios[1].isPlaying==false) {
             audios[1].clip = clips[index];
@@ -98,7 +106,7 @@ public class PlayerInput : MonoBehaviour {
         actInside = activeInsideList[index];
         inactInside = inactiveInsideList[index];
         actOutside = outside[index];
-        outside[index].color = new Color(oriColor.r, oriColor.g, oriColor.b, oriColor.a + 0.17f);
+        outside[index].color = new Color(oriColor.r, oriColor.g, oriColor.b, oriColor.a + 0.2f);
         //last = index;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimateController : MonoBehaviour {
     public Animator anim;
     public GameObject roulette;
+    public PlayerInput PI;
     // Start is called before the first frame update
     void Start() {
         anim = GetComponent<Animator>();
@@ -16,10 +17,17 @@ public class AnimateController : MonoBehaviour {
     }
 
     public void CloseStart() {
-
+        PI.inputEnable = false;
+        //anim.cullingMode = AnimatorCullingMode.CullCompletely;
     }
     public void CloseEnd() {
         roulette.SetActive(false);
         anim.SetBool("close", false);
+        anim.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+        Invoke("Act",0.6f);
+    }
+
+    void Act() {
+        PI.inputEnable = true;
     }
 }

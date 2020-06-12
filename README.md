@@ -1,3 +1,3 @@
 # Temtem_Emoji_Interactive_System
 Temtem的表情交互系统
-基于UGUI
+基于UGUI的表情轮盘
